@@ -1,9 +1,11 @@
-<html>
- <head>
-   <title>jongh's home</title>
- </head>
- <body>
-   <p> Hi </p>
-   <p> It works </p>
- </body>
-</html>
+<div>
+  <h1><a href="/">jongh's home</a></h1>
+</div>
+
+{% for post in posts %}
+  <div>
+    <p>published:{{post.published_date }} </p>
+    <h1><a href="">{{post.title}}</a></h1>
+    <p>{{post.text|linebreaksbr}}</p>
+  </div>
+{% endfor %}
