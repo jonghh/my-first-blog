@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>calculator</title>
+  </head>
+  <body>
+    <h1>명사 빈도 계산기</h1>
+    <form action="{% url 'calculate' %}" method="post">
+      {% csrf_token %}
+      <p>
+        <label for="number1"> 입력: </label>
+        <input type="text" name="number1" style="text-align:left; width:1200px; height:50px; letter-spacing: 1px"
+        class="width-dynamic proba dva" placeholder="문장을 적어 주세요." value="">
+      </p>
+
+      <p>
+        <button type="submit" name="submit"> 분석 </button>
+      </p>
+      
+      <p>
+        <input type="text" name="result" style="text-align:left; width:1200px; height:50px; letter-spacing: 1px" value="{{result}}" disabled/>
+      </p>
+
+    </form>
+  </body>
+</html>

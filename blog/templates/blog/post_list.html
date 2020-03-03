@@ -1,6 +1,16 @@
-<div>
-  <h1><a href="/">jongh's home</a></h1>
-</div>
+{% load static %}
+<html>
+ <head>
+  <title>jongh's Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="{% static 'css/blog.css'}">
+ </head>
+
+ <body>
+ <div>
+  <h1><a href="/">글 모음</a></h1>
+ </div>
 
 {% for post in posts %}
   <div>
@@ -9,3 +19,5 @@
     <p>{{post.text|linebreaksbr}}</p>
   </div>
 {% endfor %}
+ </body>
+</html>
