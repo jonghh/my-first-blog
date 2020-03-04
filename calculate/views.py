@@ -16,9 +16,11 @@ def calculate(request):
 ## 직접인용 술어부 찾기
         regex1 = re.compile('\"고 \w+[다].')
         regex2 = re.compile('\"라고 \w+[다].')
+        regex3 = re.compile('\"이라고 \w+[다].')
         findings1 = regex1.findall(number1)
         findings2 = regex2.findall(number1)
-        result = findings1 + findings2
+        findings3 = regex3.findall(number1)
+        result = findings1 + findings2 + findings3
 ## 주어 찾기
         #regex = re.compile("\w+[가이는은] ")
         #findings = regex.findall(number1)
