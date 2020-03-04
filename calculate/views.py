@@ -14,6 +14,7 @@ def calculate(request):
     elif request.method == "POST":
         number1 = request.POST['number1']
 ## 직접인용 술어부 찾기
+        number1 = number1.replace('”', '"')
         regex1 = re.compile('\"고 \w+[다].')
         regex2 = re.compile('\"고 \w+ \w+[다].')
         regex3 = re.compile('\"고 \w+ \w+ \w+[다].')
