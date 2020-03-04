@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse
 from .models import *
-from re
+import re
 # from konlpy.tag import Kkma
 from collections import Counter
 
@@ -19,12 +19,10 @@ def calculate(request):
         for word in findings:
             word = re.sub('[가이은는] ', '', word)
             result.append(word)
-"""
-        tagger = Kkma()
-        nouns = tagger.nouns(number1)
-        count = Counter(nouns)
-        result = count.most_common(100)
-"""
+        # tagger = Kkma()
+        # nouns = tagger.nouns(number1)
+        # count = Counter(nouns)
+        # result = count.most_common(100)
     else:
             result = "nothing"
     return render(request, 'calculate/calculate.html', {'result':result})
