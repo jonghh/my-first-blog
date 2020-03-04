@@ -17,7 +17,7 @@ def calculate(request):
         regex1 = re.compile('\"고 \w+[다].')
         regex2 = re.compile('\"라고 \w+[다].')
         findings1 = regex1.findall(number1)
-        findings2 = regex2.findall(number2)
+        findings2 = regex2.findall(number1)
         result = findings1 + findings2
 ## 주어 찾기
         #regex = re.compile("\w+[가이는은] ")
